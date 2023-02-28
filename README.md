@@ -1,4 +1,4 @@
 # Persona_Compendium
-Simple Tkinter code to search for Personas \n
-Info got from https://megamitensei.fandom.com/ \n
+Simple Tkinter code to search for Personas
+Info got from https://megamitensei.fandom.com/
 Incomplete code for now
