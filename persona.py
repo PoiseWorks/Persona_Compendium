@@ -22,7 +22,7 @@ Compendium = {}  # The dict with all the personas
 
 wb = openpyxl.load_workbook("datasets/Compendium.xlsx")
 ws = wb.active
-cell_range = 'A1:D243'
+cell_range = 'A1:E243'
 persona_list = [[cell.value for cell in row] for row in ws[cell_range]]
 
 # Putting the info in the dict
@@ -37,5 +37,5 @@ for a in persona_list:
 
 Images = {}
 
-Images["Alice"] = "images/Alice.png"
-
+for a in persona_list:
+    Images[a[0]] = (a[4])
