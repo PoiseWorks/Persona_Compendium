@@ -18,9 +18,9 @@ my_canvas.create_image(0, 0, image=bg, anchor="nw")
 
 # Getting the user input
 
-message = Label(root, text="Search for any persona", font=("overstrike", 20), bg="black", fg="white")
+message = Label(root, text="Search for any persona", font=("overstrike", 20), bg="red", fg="black")
 
-user_input = Entry(root, bg="black", fg="white")
+user_input = Entry(root, bg="red", fg="black")
 
 persona_label = Label(root)  # Defining info so it can be overwritten later
 
@@ -36,7 +36,7 @@ def persona_info():
     except KeyError:
         formatted_info = "No persona of that name available. Try again"
 
-    persona_label = Label(root, text=formatted_info, font=("bold", 17), bg="black", fg="white")
+    persona_label = Label(root, text=formatted_info, font=("bold", 17), bg="red", fg="black")
     persona_label.place(relx=0.5, rely=0.7, anchor=CENTER)
 
 # Defining image placement (Work in progress!, only Alice works for now)
