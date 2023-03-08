@@ -7,6 +7,8 @@ root.geometry("800x600")  # Center of the screen, kinda
 root.title("Persona Compendium")
 root.resizable(False, False)
 
+
+
 # Placing Phantom thieves logo as the background
 
 my_canvas = Canvas(root, width=800, height=600)
@@ -18,7 +20,7 @@ my_canvas.create_image(0, 0, image=bg, anchor="nw")
 
 # Getting the user input
 
-message = Label(root, text="Search for any persona", font=("overstrike", 20), bg="red", fg="black")
+message = Label(root, text="Search for any persona\nfrom persona 5", font=("Rooney Sans", 18), bg="white", fg="black")
 
 user_input = Entry(root, bg="red", fg="black")
 
@@ -36,17 +38,16 @@ def persona_info():
     except KeyError:
         formatted_info = "No persona of that name available. Try again"
 
-    persona_label = Label(root, text=formatted_info, font=("bold", 17), bg="red", fg="black")
-    persona_label.place(relx=0.5, rely=0.7, anchor=CENTER)
+    persona_label = Label(root, text=formatted_info, font=("bold", 12), bg="white", fg="black")
+    persona_label.place(relx=0.8, rely=0.9, anchor=CENTER)
 
-# Defining image placement (Work in progress!, only Alice works for now)
+# Defining image placement (Work in progress!, only some persona works for now)
 
 def image_info():
-    global image, new_bg_picture
+    global new_bg_picture
 
     try:
 
-        image = (persona.Images[str(user_input.get())])
         new_bg_picture = ImageTk.PhotoImage(Image.open(persona.Images[str(user_input.get())]))
 
         my_canvas.create_image(0, 0, image=new_bg_picture, anchor="nw")
@@ -54,12 +55,12 @@ def image_info():
     except KeyError:
         pass
 
-button = Button(root, text="Search", command=lambda: [image_info(), persona_info()], bg="red", fg="white")
+button = Button(root, text="Search", command=lambda: [image_info(), persona_info()], bg="red", fg="black")
 
 # Packing
 
-message.place(relx=0.5, rely=0.4, anchor=CENTER)
-user_input.place(relx=0.5, rely=0.5, anchor=CENTER)
-button.place(relx=0.5, rely=0.55, anchor=CENTER)
+message.place(relx=0.8, rely=0.67, anchor=CENTER)
+user_input.place(relx=0.8, rely=0.75, anchor=CENTER)
+button.place(relx=0.8, rely=0.8, anchor=CENTER)
 
 root.mainloop()
