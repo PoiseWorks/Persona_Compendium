@@ -41,7 +41,7 @@ def persona_info():
     persona_label = Label(root, text=formatted_info, font=("bold", 12), bg="white", fg="black")
     persona_label.place(relx=0.8, rely=0.9, anchor=CENTER)
 
-# Defining image placement (Work in progress!, only some persona works for now)
+# Defining image placement
 
 def image_info():
     global new_bg_picture
