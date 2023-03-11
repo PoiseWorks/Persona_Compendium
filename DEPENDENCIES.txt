@@ -1,5 +1,0 @@
-tkinter
-
-openpyxl
-
-PIL
